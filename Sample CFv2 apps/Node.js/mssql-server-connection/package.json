@@ -1,0 +1,9 @@
+{
+    "name"         : "mssql-server-connection"
+  , "version"      : "0.0.1"
+  , "description"  : "Web app for Node.js that connect to Ms Sql server database"
+  , "main"         : "mssql-server-connection.js"
+  , "dependencies": {
+    "mssql": ">= 0.4.3"
+  }
+}

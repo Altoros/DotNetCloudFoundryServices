@@ -1,0 +1,154 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudFoundryServiceBroker", "CloudFoundryServiceBroker\CloudFoundryServiceBroker.csproj", "{15B3E0D2-6217-493A-A690-158C497F5318}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrokerWindowsService", "BrokerWindowsService\BrokerWindowsService.csproj", "{3C2E3C40-974C-46C5-A11F-B822F68875E4}"
+EndProject
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "BrokerWindowsServiceSetup", "BrokerWindowsServiceSetup\BrokerWindowsServiceSetup.isproj", "{148BCB34-C907-432B-B862-7C2A466FA1E2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{87EB2C2E-12F0-4035-B034-7C3FD5B4C084} = {87EB2C2E-12F0-4035-B034-7C3FD5B4C084}
+		{3C2E3C40-974C-46C5-A11F-B822F68875E4} = {3C2E3C40-974C-46C5-A11F-B822F68875E4}
+		{1885774F-62EC-42CD-B4AC-E69F4B6E9D76} = {1885774F-62EC-42CD-B4AC-E69F4B6E9D76}
+		{2F78BEA2-9FF2-412D-BD74-9739B9800500} = {2F78BEA2-9FF2-412D-BD74-9739B9800500}
+		{347146C3-D83B-4016-AB16-2493650C3BBD} = {347146C3-D83B-4016-AB16-2493650C3BBD}
+		{15B3E0D2-6217-493A-A690-158C497F5318} = {15B3E0D2-6217-493A-A690-158C497F5318}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrokerIISServiceApplication", "BrokerIISServiceApplication\BrokerIISServiceApplication.csproj", "{B7BE0D39-3858-4252-88D1-3D5025102278}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeService", "FakeServiceClient\FakeService.csproj", "{87EB2C2E-12F0-4035-B034-7C3FD5B4C084}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsSqlService", "MsSqlService\MsSqlService.csproj", "{2F78BEA2-9FF2-412D-BD74-9739B9800500}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudFoundryServiceBroker.Interfaces", "CloudFoundryServiceBroker.Interfaces\CloudFoundryServiceBroker.Interfaces.csproj", "{1885774F-62EC-42CD-B4AC-E69F4B6E9D76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudFoundryServiceBroker.Common", "CloudFoundryServiceBroker.Common\CloudFoundryServiceBroker.Common.csproj", "{347146C3-D83B-4016-AB16-2493650C3BBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{76A247BE-BAAE-48A9-BD58-7C0C15C84130}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.txt = Readme.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample CFv2 apps", "Sample CFv2 apps", "{5E7539A1-3470-4AA5-9A5F-86BA4383A310}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Node.js", "Node.js", "{112E32A0-3099-42D0-94B2-F37E727BAE84}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "mssql-server-connection", "Sample CFv2 apps\Node.js\mssql-server-connection\mssql-server-connection.njsproj", "{291476D2-6066-4E8D-AE0D-B812D3B25405}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "environment-vars", "Sample CFv2 apps\Node.js\environment-vars\environment-vars.njsproj", "{2E858AEA-49F4-4CF9-A245-63BBCF49B017}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 11
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.altoros.com:8080/tfs/2011
+		SccProjectUniqueName0 = BrokerWindowsService\\BrokerWindowsService.csproj
+		SccProjectName0 = BrokerWindowsService
+		SccLocalPath0 = BrokerWindowsService
+		SccProjectUniqueName1 = BrokerWindowsServiceSetup\\BrokerWindowsServiceSetup.isproj
+		SccProjectName1 = BrokerWindowsServiceSetup
+		SccLocalPath1 = BrokerWindowsServiceSetup
+		SccProjectUniqueName2 = BrokerIISServiceApplication\\BrokerIISServiceApplication.csproj
+		SccProjectName2 = BrokerIISServiceApplication
+		SccLocalPath2 = BrokerIISServiceApplication
+		SccProjectUniqueName3 = MsSqlService\\MsSqlService.csproj
+		SccProjectName3 = MsSqlService
+		SccLocalPath3 = MsSqlService
+		SccProjectUniqueName4 = FakeServiceClient\\FakeService.csproj
+		SccProjectName4 = FakeServiceClient
+		SccLocalPath4 = FakeServiceClient
+		SccProjectUniqueName5 = CloudFoundryServiceBroker\\CloudFoundryServiceBroker.csproj
+		SccProjectName5 = CloudFoundryServiceBroker
+		SccLocalPath5 = CloudFoundryServiceBroker
+		SccProjectUniqueName6 = CloudFoundryServiceBroker.Interfaces\\CloudFoundryServiceBroker.Interfaces.csproj
+		SccProjectName6 = CloudFoundryServiceBroker.Interfaces
+		SccLocalPath6 = CloudFoundryServiceBroker.Interfaces
+		SccProjectUniqueName7 = CloudFoundryServiceBroker.Common\\CloudFoundryServiceBroker.Common.csproj
+		SccProjectName7 = CloudFoundryServiceBroker.Common
+		SccLocalPath7 = CloudFoundryServiceBroker.Common
+		SccProjectUniqueName8 = Sample\u0020CFv2\u0020apps\\Node.js\\mssql-server-connection\\mssql-server-connection.njsproj
+		SccProjectTopLevelParentUniqueName8 = DotNetCloudFoundryServices.sln
+		SccProjectName8 = Sample\u0020CFv2\u0020apps/Node.js/mssql-server-connection
+		SccLocalPath8 = Sample\u0020CFv2\u0020apps\\Node.js\\mssql-server-connection
+		SccProjectUniqueName9 = Sample\u0020CFv2\u0020apps\\Node.js\\environment-vars\\environment-vars.njsproj
+		SccProjectTopLevelParentUniqueName9 = DotNetCloudFoundryServices.sln
+		SccProjectName9 = Sample\u0020CFv2\u0020apps/Node.js/environment-vars
+		SccLocalPath9 = Sample\u0020CFv2\u0020apps\\Node.js\\environment-vars
+		SccLocalPath10 = .
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		SingleImage|Any CPU = SingleImage|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{3C2E3C40-974C-46C5-A11F-B822F68875E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C2E3C40-974C-46C5-A11F-B822F68875E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C2E3C40-974C-46C5-A11F-B822F68875E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C2E3C40-974C-46C5-A11F-B822F68875E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C2E3C40-974C-46C5-A11F-B822F68875E4}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{3C2E3C40-974C-46C5-A11F-B822F68875E4}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{148BCB34-C907-432B-B862-7C2A466FA1E2}.Debug|Any CPU.ActiveCfg = SingleImage
+		{148BCB34-C907-432B-B862-7C2A466FA1E2}.Release|Any CPU.ActiveCfg = SingleImage
+		{148BCB34-C907-432B-B862-7C2A466FA1E2}.Release|Any CPU.Build.0 = SingleImage
+		{148BCB34-C907-432B-B862-7C2A466FA1E2}.SingleImage|Any CPU.ActiveCfg = SingleImage
+		{148BCB34-C907-432B-B862-7C2A466FA1E2}.SingleImage|Any CPU.Build.0 = SingleImage
+		{B7BE0D39-3858-4252-88D1-3D5025102278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7BE0D39-3858-4252-88D1-3D5025102278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7BE0D39-3858-4252-88D1-3D5025102278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7BE0D39-3858-4252-88D1-3D5025102278}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7BE0D39-3858-4252-88D1-3D5025102278}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{B7BE0D39-3858-4252-88D1-3D5025102278}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{87EB2C2E-12F0-4035-B034-7C3FD5B4C084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87EB2C2E-12F0-4035-B034-7C3FD5B4C084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87EB2C2E-12F0-4035-B034-7C3FD5B4C084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87EB2C2E-12F0-4035-B034-7C3FD5B4C084}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87EB2C2E-12F0-4035-B034-7C3FD5B4C084}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{87EB2C2E-12F0-4035-B034-7C3FD5B4C084}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{2F78BEA2-9FF2-412D-BD74-9739B9800500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F78BEA2-9FF2-412D-BD74-9739B9800500}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F78BEA2-9FF2-412D-BD74-9739B9800500}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F78BEA2-9FF2-412D-BD74-9739B9800500}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F78BEA2-9FF2-412D-BD74-9739B9800500}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{2F78BEA2-9FF2-412D-BD74-9739B9800500}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{1885774F-62EC-42CD-B4AC-E69F4B6E9D76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1885774F-62EC-42CD-B4AC-E69F4B6E9D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1885774F-62EC-42CD-B4AC-E69F4B6E9D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1885774F-62EC-42CD-B4AC-E69F4B6E9D76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1885774F-62EC-42CD-B4AC-E69F4B6E9D76}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{1885774F-62EC-42CD-B4AC-E69F4B6E9D76}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{347146C3-D83B-4016-AB16-2493650C3BBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{347146C3-D83B-4016-AB16-2493650C3BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{347146C3-D83B-4016-AB16-2493650C3BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{347146C3-D83B-4016-AB16-2493650C3BBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{347146C3-D83B-4016-AB16-2493650C3BBD}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{347146C3-D83B-4016-AB16-2493650C3BBD}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{291476D2-6066-4E8D-AE0D-B812D3B25405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{291476D2-6066-4E8D-AE0D-B812D3B25405}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{291476D2-6066-4E8D-AE0D-B812D3B25405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{291476D2-6066-4E8D-AE0D-B812D3B25405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{291476D2-6066-4E8D-AE0D-B812D3B25405}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{291476D2-6066-4E8D-AE0D-B812D3B25405}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{2E858AEA-49F4-4CF9-A245-63BBCF49B017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E858AEA-49F4-4CF9-A245-63BBCF49B017}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E858AEA-49F4-4CF9-A245-63BBCF49B017}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E858AEA-49F4-4CF9-A245-63BBCF49B017}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E858AEA-49F4-4CF9-A245-63BBCF49B017}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{2E858AEA-49F4-4CF9-A245-63BBCF49B017}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{112E32A0-3099-42D0-94B2-F37E727BAE84} = {5E7539A1-3470-4AA5-9A5F-86BA4383A310}
+		{291476D2-6066-4E8D-AE0D-B812D3B25405} = {112E32A0-3099-42D0-94B2-F37E727BAE84}
+		{2E858AEA-49F4-4CF9-A245-63BBCF49B017} = {112E32A0-3099-42D0-94B2-F37E727BAE84}
+	EndGlobalSection
+EndGlobal

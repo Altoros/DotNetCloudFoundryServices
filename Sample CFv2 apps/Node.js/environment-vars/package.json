@@ -1,0 +1,6 @@
+{
+    "name"         : "environment-vars-nodejs"
+  , "version"      : "0.0.0"
+  , "description"  : "An example of webserver for Node.js"
+  , "main"         : "example.js"
+}

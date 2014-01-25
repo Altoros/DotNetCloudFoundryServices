@@ -1,0 +1,7 @@
+---
+applications:
+- name: mssql-server-connection
+  command: node mssql-server-connection.js
+  memory: 128M
+  instances: 1
+  host: mssql-server-connection

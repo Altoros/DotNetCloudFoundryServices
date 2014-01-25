@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<!-- Select a Product Configuration -->
+		<InstallShieldProductConfiguration>Express</InstallShieldProductConfiguration>
+		<!-- Select a Visual Studio Configuration / InstallShield Release -->
+		<Configuration>Debug</Configuration>
+		<InstallShieldRelease>$(Configuration)</InstallShieldRelease>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- The InstallShieldProject item selects the project to build -->
+		<InstallShieldProject Include="$(MSBuildProjectDirectory)\$(MSBuildProjectName).isl"/>
+		<!-- The InstallShieldReleaseFlags sets Release Flags -->
+		<!--<InstallShieldReleaseFlags Include=""/>-->
+		<!-- The InstallShieldMergeModulePath specifies what directories are
+		searched for Merge Modules -->
+		<!--<InstallShieldMergeModulePath Include=""/>-->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The ProjectReference items refer to any Visual Studio solutions you want to automatically probe for Project Output Groups.  -->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The TaggedOutputs items allow you to explicitly add extra files to output groups. Each item must include both Name and OutputGroup, as well as TargetPath metadata values. -->
+		<!--<TaggedOutputs Include="C:\My Test Exe.exe">
+			<Name>My Test Project</Name>
+			<OutputGroup>Primary output</OutputGroup>
+			<TargetPath>My Test Exe.exe</TargetPath>
+		</TaggedOutputs> -->
+	</ItemGroup>
+	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2013Limited\InstallShield.targets"/>
+	<ItemGroup>
+		<ProjectReference Include="..\BrokerWindowsService\BrokerWindowsService.csproj">
+			<Name>BrokerWindowsService</Name>
+			<Project>{3C2E3C40-974C-46C5-A11F-B822F68875E4}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\CloudFoundryServiceBroker\CloudFoundryServiceBroker.csproj">
+			<Name>CloudFoundryServiceBroker</Name>
+			<Project>{15B3E0D2-6217-493A-A690-158C497F5318}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\CloudFoundryServiceBroker.Common\CloudFoundryServiceBroker.Common.csproj">
+			<Name>CloudFoundryServiceBroker.Common</Name>
+			<Project>{347146C3-D83B-4016-AB16-2493650C3BBD}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\CloudFoundryServiceBroker.Interfaces\CloudFoundryServiceBroker.Interfaces.csproj">
+			<Name>CloudFoundryServiceBroker.Interfaces</Name>
+			<Project>{1885774F-62EC-42CD-B4AC-E69F4B6E9D76}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\FakeServiceClient\FakeService.csproj">
+			<Name>FakeService</Name>
+			<Project>{87EB2C2E-12F0-4035-B034-7C3FD5B4C084}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\MsSqlService\MsSqlService.csproj">
+			<Name>MsSqlService</Name>
+			<Project>{2F78BEA2-9FF2-412D-BD74-9739B9800500}</Project>
+		</ProjectReference>
+	</ItemGroup>
+</Project>

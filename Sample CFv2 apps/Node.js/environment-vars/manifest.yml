@@ -1,0 +1,7 @@
+---
+applications:
+- name: environment-vars-nodejs
+  command: node example.js
+  memory: 128M
+  instances: 1
+  host: nodejs

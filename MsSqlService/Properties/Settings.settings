@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MsSqlService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SqlServerUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">[Your external SQL server address]</Value>
+    </Setting>
+    <Setting Name="SqlServerPort" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">[Your external SQL server port]</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
