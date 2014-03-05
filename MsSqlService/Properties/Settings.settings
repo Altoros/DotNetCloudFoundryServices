@@ -8,5 +8,8 @@
     <Setting Name="SqlServerPort" Type="System.String" Scope="Application">
       <Value Profile="(Default)">[Your external SQL server port]</Value>
     </Setting>
+    <Setting Name="SqlDatabaseFilesLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">[Path to your SQL server db files, e.g. C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\DATA\ ]</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -1,4 +1,5 @@
-﻿using CloudFoundryServiceBroker.Interfaces;
+﻿using System.IO;
+using CloudFoundryServiceBroker.Interfaces;
 using CloudFoundryServiceBroker.Interfaces.Entities;
 using MsSqlService.Properties;
 using System;
@@ -9,22 +10,27 @@ using System.Text;
 
 namespace MsSqlService
 {
-    public class MsSqlProvider
+    internal class MsSqlProvider
     {
         private readonly string _connectionString;
-        private static readonly Random _rnd = new Random((int)DateTime.Now.Ticks);
 
         public MsSqlProvider()
         {
             _connectionString = ConfigurationManager.ConnectionStrings[Constants.AppKeys.CloudFoundryConnectionString].ConnectionString;
         }
 
-        public void CreateDatabase(string databaseName)
+        public void CreateDatabase(string databaseName, MsSqlPlanEntity plan)
         {
             CheckInputParams(databaseName);
 
             var databaseNameBase64 = ConvertToBase64(databaseName);
-            var query = string.Format(Constants.SqlTemplates.CreateDB, databaseNameBase64);
+            string query;
+            if (plan.DatabaseSize != 0 && plan.DatabaseSize != -1)
+            {
+                var path = Settings.Default.SqlDatabaseFilesLocation;
+                query = string.Format(Constants.SqlTemplates.CreateLimitedDatabase, databaseNameBase64, path, plan.DatabaseSize);
+            }
+            else query = string.Format(Constants.SqlTemplates.CreateDatabase, databaseNameBase64);
 
             using (var sqlConn = new SqlConnection(_connectionString))
             {
@@ -41,7 +47,7 @@ namespace MsSqlService
             }
         }
 
-        public Credentials CreateUserForDatabase(string databaseName, string userName)
+        public Credentials CreateUserForDatabase(string databaseName, string userName, MsSqlPlanEntity plan)
         {
             CheckInputParams(databaseName, userName);
 
@@ -58,12 +64,17 @@ namespace MsSqlService
                     cmd.Parameters.Add(Constants.SqlParameters.UserLogin, SqlDbType.NVarChar).Value = userNameBase64;
                     cmd.Parameters.Add(Constants.SqlParameters.UserPassword, SqlDbType.NVarChar).Value = userPassword;
                     cmd.Parameters.Add(Constants.SqlParameters.DbName, SqlDbType.NVarChar).Value = databaseNameBase64;
+                    cmd.Parameters.Add(Constants.SqlParameters.Limit, SqlDbType.Int).Value = plan.NumberOfBindings;
                     cmd.Parameters.Add(Constants.SqlParameters.Result, SqlDbType.Int).Direction = ParameterDirection.Output;
 
                     sqlConn.Open();
                     cmd.ExecuteNonQuery();
 
                     var result = (int)cmd.Parameters[Constants.SqlParameters.Result].Value;
+                    if (result == -2)
+                    {
+                        throw new LimitException();
+                    }
                     if (result == -1)
                     {
                         throw new ConflictException(string.Format(Constants.ErrorMessageTemplates.UserAlreadyExists, userNameBase64));
@@ -112,7 +123,7 @@ namespace MsSqlService
 
             var databaseNameBase64 = ConvertToBase64(databaseName);
 
-            var query = string.Format(Constants.SqlTemplates.DropDB, databaseNameBase64);
+            var query = string.Format(Constants.SqlTemplates.DropDatabase, databaseNameBase64);
 
             using (var sqlConn = new SqlConnection(_connectionString))
             {
@@ -163,13 +174,14 @@ namespace MsSqlService
             const string digits = "0123456789";
 
             var buffer = new char[size];
+            var rnd = new Random((int)DateTime.Now.Ticks);
 
-            buffer[0] = chars[_rnd.Next(chars.Length)];
+            buffer[0] = chars[rnd.Next(chars.Length)];
             var symbols = string.Concat(chars, digits);
 
             for (int i = 1; i < size; i++)
             {
-                buffer[i] = symbols[_rnd.Next(symbols.Length)];
+                buffer[i] = symbols[rnd.Next(symbols.Length)];
             }
 
             return new string(buffer);

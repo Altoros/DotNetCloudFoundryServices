@@ -1,7 +1,7 @@
 ﻿
 namespace MsSqlService
 {
-    public static class Constants
+    internal static class Constants
     {
         public static class AppKeys
         {
@@ -35,6 +35,7 @@ namespace MsSqlService
             public static string UserLogin = "@UserLogin";
             public static string UserPassword = "@UserPassword";
             public static string DbName = "@DbName";
+            public static string Limit = "@Limit";
             public static string Result = "@Result";
         }
 
@@ -45,17 +46,26 @@ namespace MsSqlService
 
         public static class SqlTemplates
         {
-            public static string CreateDB = @"DECLARE @res INT;
+            public static string CreateDatabase = @"DECLARE @res INT;
                                               IF DB_ID('{0}') IS NULL 
                                               BEGIN
-                                                CREATE DATABASE [{0}] 
-                                                SET @res = 0
+                                                CREATE DATABASE [{0}];
+                                                SET @res = 0;
+                                              END
+                                              ELSE SET @res = -1
+                                              
+                                              SELECT @res";
+            public static string CreateLimitedDatabase = @"DECLARE @res INT;
+                                              IF DB_ID('{0}') IS NULL 
+                                              BEGIN
+                                                CREATE DATABASE [{0}]  ON PRIMARY (MAXSIZE = {2}MB, FILENAME='{1}{0}.mdf', Name='{0}');
+                                                SET @res = 0;
                                               END
                                               ELSE SET @res = -1
                                               
                                               SELECT @res";
 
-            public static string DropDB = @"DECLARE @res INT;
+            public static string DropDatabase = @"DECLARE @res INT;
                                             IF DB_ID('{0}') IS NOT NULL 
                                             BEGIN
                                               DROP DATABASE [{0}] 

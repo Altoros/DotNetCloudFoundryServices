@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudFoundryServiceBroker.C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{76A247BE-BAAE-48A9-BD58-7C0C15C84130}"
 	ProjectSection(SolutionItems) = preProject
+		ComponentGraph.dgml = ComponentGraph.dgml
+		README.md = README.md
 		Readme.txt = Readme.txt
 	EndProjectSection
 EndProject
@@ -39,44 +41,6 @@ EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "environment-vars", "Sample CFv2 apps\Node.js\environment-vars\environment-vars.njsproj", "{2E858AEA-49F4-4CF9-A245-63BBCF49B017}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 11
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfs.altoros.com:8080/tfs/2011
-		SccProjectUniqueName0 = BrokerWindowsService\\BrokerWindowsService.csproj
-		SccProjectName0 = BrokerWindowsService
-		SccLocalPath0 = BrokerWindowsService
-		SccProjectUniqueName1 = BrokerWindowsServiceSetup\\BrokerWindowsServiceSetup.isproj
-		SccProjectName1 = BrokerWindowsServiceSetup
-		SccLocalPath1 = BrokerWindowsServiceSetup
-		SccProjectUniqueName2 = BrokerIISServiceApplication\\BrokerIISServiceApplication.csproj
-		SccProjectName2 = BrokerIISServiceApplication
-		SccLocalPath2 = BrokerIISServiceApplication
-		SccProjectUniqueName3 = MsSqlService\\MsSqlService.csproj
-		SccProjectName3 = MsSqlService
-		SccLocalPath3 = MsSqlService
-		SccProjectUniqueName4 = FakeServiceClient\\FakeService.csproj
-		SccProjectName4 = FakeServiceClient
-		SccLocalPath4 = FakeServiceClient
-		SccProjectUniqueName5 = CloudFoundryServiceBroker\\CloudFoundryServiceBroker.csproj
-		SccProjectName5 = CloudFoundryServiceBroker
-		SccLocalPath5 = CloudFoundryServiceBroker
-		SccProjectUniqueName6 = CloudFoundryServiceBroker.Interfaces\\CloudFoundryServiceBroker.Interfaces.csproj
-		SccProjectName6 = CloudFoundryServiceBroker.Interfaces
-		SccLocalPath6 = CloudFoundryServiceBroker.Interfaces
-		SccProjectUniqueName7 = CloudFoundryServiceBroker.Common\\CloudFoundryServiceBroker.Common.csproj
-		SccProjectName7 = CloudFoundryServiceBroker.Common
-		SccLocalPath7 = CloudFoundryServiceBroker.Common
-		SccProjectUniqueName8 = Sample\u0020CFv2\u0020apps\\Node.js\\mssql-server-connection\\mssql-server-connection.njsproj
-		SccProjectTopLevelParentUniqueName8 = DotNetCloudFoundryServices.sln
-		SccProjectName8 = Sample\u0020CFv2\u0020apps/Node.js/mssql-server-connection
-		SccLocalPath8 = Sample\u0020CFv2\u0020apps\\Node.js\\mssql-server-connection
-		SccProjectUniqueName9 = Sample\u0020CFv2\u0020apps\\Node.js\\environment-vars\\environment-vars.njsproj
-		SccProjectTopLevelParentUniqueName9 = DotNetCloudFoundryServices.sln
-		SccProjectName9 = Sample\u0020CFv2\u0020apps/Node.js/environment-vars
-		SccLocalPath9 = Sample\u0020CFv2\u0020apps\\Node.js\\environment-vars
-		SccLocalPath10 = .
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

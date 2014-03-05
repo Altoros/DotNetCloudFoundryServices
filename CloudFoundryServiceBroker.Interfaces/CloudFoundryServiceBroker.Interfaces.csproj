@@ -73,6 +73,7 @@
     <Compile Include="ICloudFoundryService.cs" />
     <Compile Include="ICloundFoundryServicePlugin.cs" />
     <Compile Include="ICredentialsValidator.cs" />
+    <Compile Include="LimitException.cs" />
     <Compile Include="NotFoundException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

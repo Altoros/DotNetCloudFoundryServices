@@ -7,7 +7,6 @@ using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
 using System.Configuration;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -77,24 +76,38 @@ namespace CloudFoundryServiceBroker
 
             //CreateBinding was called (Service: 2d199cc2-418f-44b5-90d0-2661ee6efef3; Id: f1efc4ff-7b8d-47d6-aeed-2160ba1bf57a; ServiceTypeId: 78a2c443-f6e3-42c1-8004-bb0dc3c01a84; PlanId: 3d91602a-7f16-4e31-8fbb-89c894119eb2; Application: 52873cf2-6bd9-466b-b001-58fd1d0d37e3)
             //const string sid = "78a2c443-f6e3-42c1-8004-bb0dc3c01a84";
-            //const string pid = "3d91602a-7f16-4e31-8fbb-89c894119eb2";
+            ////const string pid = "3d91602a-7f16-4e31-8fbb-89c894119eb2"; //unlim
+            //const string pid = "65A213D9-CE05-48DD-9C0D-CB4F1006EF6E"; //1Gb + 1 user
+            ////const string pid = "C5B8CF1F-4055-4ACB-B050-B0E9DFD67B33"; //4Gb + 3 user
             //var si = Guid.NewGuid().ToString();
-            //var pi = Guid.NewGuid().ToString();
+            //var pi1 = Guid.NewGuid().ToString();
+            //var pi2 = Guid.NewGuid().ToString();
+            //var pi3 = Guid.NewGuid().ToString();
+            //var pi4 = Guid.NewGuid().ToString();
             //var cat = FetchCatalog();
-            //var prov = ProvisionInstance(si,
-            //    new ProvisioningRequest()
+            //var provisioningResult = ProvisionInstance(si,
+            //    new ProvisioningRequest
             //    {
             //        ServiceId = sid,
             //        PlanId = pid,
             //        Organization = Guid.NewGuid().ToString(),
             //        Space = Guid.NewGuid().ToString()
             //    });
-            //var res = CreateBinding(si, pi, new BindingRequest() { ServiceId = sid, PlanId = pid, Application = Guid.NewGuid().ToString() });
-            //var r2 = RemoveBinding(si, pi, new BaseRequest() { ServiceId = sid, PlanId = pid });
-            //var provRem = RemoveInstance(si, new BaseRequest() {ServiceId = sid, PlanId = pid});
-            //if (cat != null && res != null && prov != null && r2!=null && provRem != null)
+            //var res1 = CreateBinding(si, pi1, new BindingRequest { ServiceId = sid, PlanId = pid, Application = Guid.NewGuid().ToString() });
+            //var res2 = CreateBinding(si, pi2, new BindingRequest { ServiceId = sid, PlanId = pid, Application = Guid.NewGuid().ToString() });
+            //var res3 = CreateBinding(si, pi3, new BindingRequest { ServiceId = sid, PlanId = pid, Application = Guid.NewGuid().ToString() });
+            //var res4 = CreateBinding(si, pi4, new BindingRequest { ServiceId = sid, PlanId = pid, Application = Guid.NewGuid().ToString() });
+
+            //BaseResponse br = null;
+            //if(res4 != null) br = RemoveBinding(si, pi4, new BaseRequest { ServiceId = sid, PlanId = pid });
+            //if(res3 != null) br = RemoveBinding(si, pi3, new BaseRequest { ServiceId = sid, PlanId = pid });
+            //if(res2 != null) br = RemoveBinding(si, pi2, new BaseRequest { ServiceId = sid, PlanId = pid });
+            //if(res1 != null) br = RemoveBinding(si, pi1, new BaseRequest { ServiceId = sid, PlanId = pid });
+
+            //var provisioningClenupResult = RemoveInstance(si, new BaseRequest { ServiceId = sid, PlanId = pid });
+            //if (cat != null && res1 != null && provisioningResult != null && br != null && provisioningClenupResult != null)
             //{
-            //    Debug.WriteLine("test Passed");
+            //    System.Diagnostics.Debug.WriteLine("test Passed");
             //}
         }
 

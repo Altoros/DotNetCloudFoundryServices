@@ -30,6 +30,7 @@ namespace CloudFoundryServiceBroker.Interfaces
         /// <returns></returns>
         /// <remarks>Create database user who can access database created with provision request</remarks>
         /// <exception cref="ConflictException">ConflictException should be thrown in case if instance with requested Id already exists</exception>
+        /// <exception cref="LimitException">LimitException should be thrown in case if exceed allowed number of bindings</exception>
         CreateBindingResponse CreateBinding(CreateBindingRequest request);
 
         /// <summary>

@@ -1,4 +1,5 @@
-﻿using CloudFoundryServiceBroker.Interfaces;
+﻿using System.Linq;
+using CloudFoundryServiceBroker.Interfaces;
 using CloudFoundryServiceBroker.Interfaces.Entities;
 using System.ComponentModel.Composition;
 using System.Configuration;
@@ -26,7 +27,8 @@ namespace MsSqlService
         {
             var dashboardUrl = ConfigurationManager.AppSettings[Constants.AppKeys.DashboardUrl];
 
-            _msSqlProvider.CreateDatabase(request.ServiceInstanceId);
+            var plan = _serviceInfo.SqlPlans.First(x=>x.Id==request.PlanId);
+            _msSqlProvider.CreateDatabase(request.ServiceInstanceId, plan);
             return new ProvisioningServiceResponse { Url = dashboardUrl };
         }
 
@@ -34,7 +36,8 @@ namespace MsSqlService
         {
             var logUrl = ConfigurationManager.AppSettings[Constants.AppKeys.LogUrl];
 
-            var credentials = _msSqlProvider.CreateUserForDatabase(request.ServiceInstanceId, request.BindingInstanceId);
+            var plan = _serviceInfo.SqlPlans.First(x => x.Id == request.PlanId);
+            var credentials = _msSqlProvider.CreateUserForDatabase(request.ServiceInstanceId, request.BindingInstanceId, plan);
             return new CreateBindingResponse { Credentials = credentials, LogUrl = logUrl };
         }
 
